@@ -1,16 +1,20 @@
 window.HELP_IMPROVE_VIDEOJS = false;
 
 var INTERP_BASE = "./static/interpolation/stacked";
-var NUM_INTERP_FRAMES = 240;
+var NUM_INTERP_FRAMES = 1000;
 
 var interp_images = [];
 function preloadInterpolationImages() {
-  for (var i = 0; i < NUM_INTERP_FRAMES; i++) {
-    var path = INTERP_BASE + '/' + String(i).padStart(6, '0') + '.jpg';
+  for (var i = 0; i <= NUM_INTERP_FRAMES; i += 5) {
+    // 新的文件名格式 "ppo_success_rate_massive_step_<i>.jpg"
+    var path = INTERP_BASE + '/ppo_success_rate_massive_step_' + i + '.png';
     interp_images[i] = new Image();
     interp_images[i].src = path;
+    // interp_images[i].width = 300;  
+    // interp_images[i].height = 'auto';
   }
 }
+
 
 function setInterpolationImage(i) {
   var image = interp_images[i];
