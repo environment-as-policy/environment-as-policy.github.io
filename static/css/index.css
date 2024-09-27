@@ -153,5 +153,19 @@ body {
   width: 100%;
 }
 #interpolation-image-wrapper img {
-  border-radius: 20px;
+  border-radius: 5px;
+}
+
+.video-container {
+  display: flex;
+  justify-content: center; /* 居中对齐 */
+  align-items: center;
+  gap: 20px; /* 视频之间的间距 */
+  margin-bottom: 10px;
+}
+
+.video-item video {
+  width: 100%; /* 每个视频占45%的宽度 */
+  height: auto;
+  border-radius: 10px; 
 }
